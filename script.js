@@ -12,4 +12,5 @@ function makeOpArray() {
 	//console.log("levi has a lame computer");
 	var opArray = document.getElementById("opArray")[];
 	opArray.innerHTML = "dope";
+	console.log("Dopest dope I've ever smoked");
 }
