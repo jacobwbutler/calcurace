@@ -1,19 +1,3 @@
-Skip to content
-This repository  
-Search
-Pull requests
-Issues
-Gist
- @jacobwbutler
- Unwatch 2
-  Star 0
-  Fork 1 jacobwbutler/calcurace
- Code  Issues 0  Pull requests 1  Wiki  Pulse  Graphs  Settings
-Branch: gh-pages Find file Copy pathcalcurace/script.js
-23a34fc  an hour ago
-@jacobwbutler jacobwbutler Update script.js
-2 contributors @jacobwbutler @leviathananthony
-RawBlameHistory     150 lines (137 sloc)  3.85 KB
 var opArray = [];
 var answers = [];
 var runningTotal = 0;
