@@ -92,7 +92,8 @@ $(document).ready(function() {
 	    finalAnswer = runningTotal;
 	    //alert(runningTotal);
 	}
-/**
+
+	/**
 	function printTotal(currTotal) {
 		alert(currTotal);
 	}
@@ -102,9 +103,9 @@ $(document).ready(function() {
     		$("#one").append(element);
     	} else if (loopNum === 2) {
     		$("#two").append(element);    		
-    	} if (loopNum === 3) {
+    	} else if (loopNum === 3) {
     		$("#three").append(element);
-    	} else if (loopNum === 4) {
+    	} else {
     		$("#four").append(element);    		
     	} 
     	/*if (loopNum === 5) {
@@ -136,19 +137,15 @@ $(document).ready(function() {
 		}
 		//opArray.innerHTML = "dope";
 	}
-
 	function addOp(first, second) {
 		return eval("first + second");
 	}
-
 	function multOp(first second) {
 		return eval("first * second");
 	}
-
 	function subOp(first, second) {
 		return eval("first - second");
 	}
-
 	function divOp(first, second) {
 		return eval("first / second");
 	}
@@ -158,5 +155,3 @@ $(document).ready(function() {
 		$("zero").append(startingNumber);
 	}
 */
-
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
