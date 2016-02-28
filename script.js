@@ -1,31 +1,44 @@
-var opArray = [];
-var answers = [];
+var score = 0;
 var runningTotal = 0;
 var finalAnswer = 0;
-//var determiningOperator;
 
 $(document).ready(function() {
-
-    //for (i = 0; i < names.length; i++) { 
-      //  $("#jacob").append(names[i]);
-    //}
-    //alert("Dopety dope!");
-    //setup();
-    //setup();
-    //makeOpArray();
-    //alert("Please Work 5");
+	$("highscore").text(score);
+    $("#btn").bind("click", function () {
+    	"document.quiz-input.answer.focus()";
+    })
+    $("#quiz-input").bind('change', function() {
+    	if ($(this).val().length > 0) {
+    		$('input[type=submit]').attr('disabled', 'disabled');
+    	} else {
+    		$('input[type=submit]').removeAttr('disabled');
+    	}
+    	//$("input[type=submit]").prop("disabled", $(this).val().length > 0);
+    });
     $("#quiz-input").submit(function(event){
-        event.preventDefault();
-        var userInput = $("input[name='answer']").val();
-        // Check input against answer
-        //answers.push(mathInput);
-        $("input[name='answer']").val("");
-        if (userInput / 1 === finalAnswer) {
-        	alert("Righto bucky boy!");
-        } else {
-        	alert("You're an absolute idiot.\nThe answer was " + finalAnswer);
-        }
-        finalAnswer = 0;
+    	var checkNull = $("quiz-input").val();
+    	if (checkNull != "") {
+    		event.preventDefault();
+        	var userInput = $("input[name='answer']").val();
+        	// Check input against answer
+        	//answers.push(mathInput);
+        	$("input[name='answer']").val("");
+        	if (userInput / 1 === finalAnswer) {
+        		score++;
+        		var rambo = Math.floor(Math.random() * 2);
+        		if (rambo === 0) {
+        			alert("Bingo bango that's all righto!");
+        		} else {
+        			alert("Righto bucky boy!");
+        		}
+        	} else {
+        		score = 0;
+        		alert("You're an absolute idiot.\nThe answer was " + finalAnswer);
+        	}
+        	changeHighscore();
+        	finalAnswer = 0;
+        	document.getElementById("beginBtn").focus();
+    	}
     });
 });
 
@@ -36,7 +49,10 @@ $(document).ready(function() {
 		}
 
 		function setup() {
+		document.getElementById("submitBtn").focus();
 		startingNumber();
+		//$("#quiz-input").focus();
+		//$("#quiz-input input").prop("disabled", false);
 		$("#one").text("");
 		$("#two").text("");
 		$("#three").text("");
@@ -52,28 +68,29 @@ $(document).ready(function() {
 			//console.log(determiningOperator);
 	    	//Addition
 	    	if (determiningOperator === 1) {
-		    	addRandom = Math.floor(Math.random() * 20) + 1;
+		    	addRandom = Math.floor(Math.random() * 15) + 1;
 		    	while (runningTotal + addRandom > 400) {
-					addRandom = Math.floor(Math.random() * 20) + 1;
+					addRandom = Math.floor(Math.random() * 15) + 1;
 	        	}
-		    	addToPage(i, "+\n " + addRandom + "\n");
+		    	addToPage(i, "+ " + addRandom);
 		    	//To show js not to concatenate
 		    	runningTotal = (runningTotal / 1) + addRandom;
 			//Multiplication
   			} else if (determiningOperator === 2) {
-	    		multiplyRandom = (Math.floor(Math.random() * 20) + 1);
-	    		while (runningTotal * multiplyRandom > 400) {
-	    			multiplyRandom = (Math.floor(Math.random() * 20) + 1);
+	    		multiplyRandom = (Math.floor(Math.random() * 15) + 1);
+	    		while (runningTotal * multiplyRandom > 400 ||
+	    				multiplyRandom == 1) {
+	    			multiplyRandom = (Math.floor(Math.random() * 15) + 1);
 	    		}
 	    		addToPage(i, "x " + multiplyRandom);
 	    		runningTotal *= multiplyRandom;
 	    	//Subtraction
 	    	} else {
-	    		subtractRandom = (Math.floor(Math.random() * 20) + 1);
+	    		subtractRandom = (Math.floor(Math.random() * 15) + 1);
 	    		while (runningTotal - subtractRandom <= 0) {
-	    			subtractRandom = (Math.floor(Math.random() * 20) + 1);
+	    			subtractRandom = (Math.floor(Math.random() * 15) + 1);
 	    		}
-	    		addToPage(i, "-\n " + subtractRandom + "\n");
+	    		addToPage(i, "- " + subtractRandom);
 	    		runningTotal -= subtractRandom;
 	    	}
 	    	//Division
@@ -90,6 +107,11 @@ $(document).ready(function() {
 	    }
 	    finalAnswer = runningTotal;
 	    //alert(runningTotal);
+	}
+
+	function changeHighscore() {
+		//$("highscore").innerHTML = score;
+		$("#highscore").html(score);
 	}
 /**
 	function printTotal(currTotal) {
