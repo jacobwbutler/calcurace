@@ -16,11 +16,19 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="javascripts/script.js"></script>
   
-  
-    
-    
-
   <title>Calc-u-Race</title>
+  <style type="text/css">
+  #background-container   { 
+    background-image: url(clouds.jpg);
+    width: 500px; 
+    height: 132px; 
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    margin-right: 10px;
+    display: block;
+    /*animation: animatedBackground 40s linear infinite;*/
+}
+</style>
 
   <meta name="description" content="A fluid arithmetic competition pits you against the clock or friends to keep your skills sharp!">
 
@@ -30,7 +38,25 @@
 
 <body>
 
+<div id="background-container"></div>
 
+<script type="text/javascript">
+  function animateBackground (elem, speed) {
+    var x=0;
+    var y=0;
+    elem.style.backgroundPosition = x + 'px' + ' ' + y + 'px';
+    
+    var timer = setInterval (function (speed) {
+      elem.style.backgroundPosition = x + 'px' + ' ' + y + 'px';
+      x--;
+      if (x == 350) {
+        clearInterval (timer);
+      }
+
+    },speed)
+  }
+  document.addEventListener("DOMContentLoaded", animateBackground(document.getElementById('background-container'),20),false);
+</script>
 
 
 <div class="wrapper">
