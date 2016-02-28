@@ -61,17 +61,18 @@ animation: animatedBackground 40s linear infinite;
 
 <div class="wrapper">
   <header>
-    <h1 class="text-center" id="neon" >Calc-u-Race</h1>
+    <h1 class="text-center" id="neon" >CalcuRace</h1>
   </header>
   <div id="container">
   <p id="tagline">
-    Race to complete all mathematical operations in order and submit your answer in the box below.
+    Race to complete all mathematical operations in order and submit your answer in the box below! Your highest running streak is displayed.
   </p>
+  <p id="highscore">0</p>
   
     <table align="center">
       <tr>
         <td>
-          <button id="btn" onclick="setup()">New Quiz</button>
+          <button class="btn" id="beginBtn" onclick="setup()">Begin</button>
         </td>
       </tr>
     </table>
@@ -87,21 +88,21 @@ animation: animatedBackground 40s linear infinite;
     </div>
     <table align="center">
       <tr>
-        <td>
-    <form id="quiz-input">
-      <input name="answer" type="number">
-      <br><br>
-      <input id="btn" type="submit">
-    </form>
-        </td>
+      <td>
+    <div id="answer-block">
+        <form id="quiz-input">
+          <input name="answer" type="number" id="submitBtn">
+            <br><br>
+          <input class="btn" type="submit" value="Submit">
+        </form>
+    </div>
+      </td>
       </tr>
     </table>
   <div class="wrapper">
     
-      
-    
     <div id="container">
-      <p class="tagline">A fluid arithmetic competition pits you against the clock or friends to keep your skills sharp!</p>
+      <p class="tagline"></p>
       <div id="main" role="main">
         <div class="download-bar">
         <div class="inner">
@@ -117,9 +118,6 @@ animation: animatedBackground 40s linear infinite;
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>Jay Butts is a pretty dope baller.</p>
-<p>Yo boy Levi hasn't showered since Friday morning, so keep that in mind.</p>
-
 <!-- 
   <p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p> 
 -->
@@ -130,15 +128,13 @@ animation: animatedBackground 40s linear infinite;
   
 
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
         </article>
       </div>
     </div>
     <footer>
       <div class="owner">
-      <p><a href="https://github.com/jacobwbutler" class="avatar"><img src="https://avatars1.githubusercontent.com/u/14024128?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/jacobwbutler">jacobwbutler</a> maintains <a href="https://github.com/jacobwbutler/calcurace">Calcurace</a></p>
+      <p><a href="https://github.com/jacobwbutler" class="avatar"><img src="https://avatars1.githubusercontent.com/u/14024128?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/jacobwbutler">jacobwbutler</a> maintains <a href="https://github.com/jacobwbutler/calcurace">CalcuRace</a></p>
 
 
       </div>
