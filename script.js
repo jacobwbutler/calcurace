@@ -27,7 +27,6 @@ $(document).ready(function() {
         }
         finalAnswer = 0;
     });
-
 });
 
         function startingNumber() {
@@ -57,7 +56,7 @@ $(document).ready(function() {
 		    	while (runningTotal + addRandom > 400) {
 					addRandom = Math.floor(Math.random() * 20) + 1;
 	        	}
-		    	addToPage(i, "Plus " + addRandom + "\n");
+		    	addToPage(i, "+\n " + addRandom + "\n");
 		    	//To show js not to concatenate
 		    	runningTotal = (runningTotal / 1) + addRandom;
 			//Multiplication
@@ -66,7 +65,7 @@ $(document).ready(function() {
 	    		while (runningTotal * multiplyRandom > 400) {
 	    			multiplyRandom = (Math.floor(Math.random() * 20) + 1);
 	    		}
-	    		addToPage(i, "Times " + multiplyRandom + "\n");
+	    		addToPage(i, "x " + multiplyRandom);
 	    		runningTotal *= multiplyRandom;
 	    	//Subtraction
 	    	} else {
@@ -74,7 +73,7 @@ $(document).ready(function() {
 	    		while (runningTotal - subtractRandom <= 0) {
 	    			subtractRandom = (Math.floor(Math.random() * 20) + 1);
 	    		}
-	    		addToPage(i, "Minus " + subtractRandom + "\n");
+	    		addToPage(i, "-\n " + subtractRandom + "\n");
 	    		runningTotal -= subtractRandom;
 	    	}
 	    	//Division
@@ -102,9 +101,9 @@ $(document).ready(function() {
     		$("#one").append(element);
     	} else if (loopNum === 2) {
     		$("#two").append(element);    		
-    	} if (loopNum === 3) {
+    	} else if (loopNum === 3) {
     		$("#three").append(element);
-    	} else if (loopNum === 4) {
+    	} else {
     		$("#four").append(element);    		
     	} 
     	/*if (loopNum === 5) {
@@ -158,5 +157,3 @@ $(document).ready(function() {
 		$("zero").append(startingNumber);
 	}
 */
-
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
