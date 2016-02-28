@@ -24,9 +24,9 @@
     height: 132px; 
     background-position: 0px 0px;
     background-repeat: repeat-x;
-    margin-right: 10px;
-    display: block;
-    /*animation: animatedBackground 40s linear infinite;*/
+        /*margin-right: 10px;
+    display: block;*/
+animation: animatedBackground 40s linear infinite;
 }
 </style>
 
@@ -48,7 +48,7 @@
     
     var timer = setInterval (function (speed) {
       elem.style.backgroundPosition = x + 'px' + ' ' + y + 'px';
-      x--;
+      x++;
       if (x == 350) {
         clearInterval (timer);
       }
@@ -66,7 +66,14 @@
   <p id="tagline">
     Race to complete all mathematical operations in order and submit your answer in the box below.
   </p>
-  <button id="btn" onclick="setup()">Start Quiz</button>
+  
+    <table align="center">
+      <tr>
+        <td>
+          <button id="btn" onclick="setup()">New Quiz</button>
+        </td>
+      </tr>
+    </table>
   <br><br>
     <div id="quiz">
       <!-- THIS IS THE AREA BETWEEN THE START BUTTON AND THE SUBMIT AREA-->
@@ -77,10 +84,17 @@
     <div id="three" class="quizElem"></div>    
     <div id="four" class="quizElem"></div>
     </div>
+    <table align="center">
+      <tr>
+        <td>
     <form id="quiz-input">
       <input name="answer" type="number">
+      <br><br>
       <input id="btn" type="submit">
     </form>
+        </td>
+      </tr>
+    </table>
   <div class="wrapper">
     
       
