@@ -64,13 +64,16 @@ $(document).ready(function() {
 		//runningTotal = 0;
 		for (i = 1; i < 5; i++) {
 			//var diviseRandom;
-			determiningOperator = (Math.floor(Math.random() * 3) + 1);
+			if (runningTotal > 200) {
+				determiningOperator = 3;
+			} else if (runningTotal < 10) {
+				determiningOperator = Math.floor(Math.random() * 2) + 1;
+			} else {
+				determiningOperator = (Math.floor(Math.random() * 3) + 1);
+			}
 	    	//Addition
 	    	if (determiningOperator === 1) {
 		    	 addRandom = Math.floor(Math.random() * 15) + 1;
-		    	/*while (runningTotal + addRandom > 400) {
-					addRandom = Math.floor(Math.random() * 15) + 1;
-	        	}*/
 	        	/*do {
 	        		addRandom = Math.floor(Math.random() * 15) + 1;
 	        	} while (runningTotal + addRandom > 400);*/
@@ -79,14 +82,13 @@ $(document).ready(function() {
 		    	runningTotal = (runningTotal / 1) + addRandom;
 			//Multiplication
   			} else if (determiningOperator === 2) {
-	    		multiplyRandom = (Math.floor(Math.random() * 15) + 1);
-	    		/* while (runningTotal * multiplyRandom > 400 ||
-	    				multiplyRandom == 1) {
-	    			multiplyRandom = (Math.floor(Math.random() * 15) + 1);
-	    		}
-	    		do {
-	    			multiplyRandom = (Math.floor(Math.random() * 15) + 1);
+  				multiplyRandom = Math.floor(Math.random() * 15) + 1;
+  				while (multiplyRandom === 1) {
+  					multiplyRandom = Math.floor(Math.random() * 15) + 1;
+  				}
 	    		
+	    		/*do {
+	    			multiplyRandom = (Math.floor(Math.random() * 15) + 1);
 	    		} while (runningTotal * multiplyRandom > 400 ||
 	    				multiplyRandom == 1);*/
 	    		addToPage(i, "x " + multiplyRandom);
@@ -94,10 +96,7 @@ $(document).ready(function() {
 	    	//Subtraction
 	    	} else {
 	    		subtractRandom = (Math.floor(Math.random() * 15) + 1);
-	    		/*while (runningTotal - subtractRandom <= 0) {
-	    			subtractRandom = (Math.floor(Math.random() * 15) + 1);
-	    		}
-	    		do {
+	    		/*do {
 	    			subtractRandom = (Math.floor(Math.random() * 15) + 1);
 	    		} while (runningTotal - subtractRandom <= 0);*/
 
@@ -124,5 +123,4 @@ $(document).ready(function() {
     	} else {
     		$("#four").append(element);    		
     	} 
-
     }
