@@ -1,9 +1,16 @@
-#neon {
-    color: #D0F8FF;
-    text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
-             0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
-             0 0 40px #A5F1FF;
-}
+#neon { color: #CEF0D4; 
+        font-family: 'Rouge Script', 
+        cursive; 
+        font-size: 130px; 
+        font-weight: normal; 
+        line-height: 48px; 
+        margin: 0 0 50px; 
+        text-align: center; 
+        text-shadow: 1px 1px 2px #082b34;
+        }
+
+
+
 body {
     margin: 60px auto;
     width: 70%;
